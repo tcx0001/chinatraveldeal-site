@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deal Data Builder | Chinatraveldeal</title>
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="head">
+        <h1>Deal Data Builder</h1>
+        <p>Create a new deal record and export updated `deals.json`.</p>
+        <a href="./index.html">Back to homepage</a>
+      </header>
+
+      <section class="panel">
+        <form id="dealForm" class="grid">
+          <p id="formMode" class="full-line mode-text">Mode: Add new deal</p>
+          <ul id="formErrors" class="full-line form-errors"></ul>
+          <label>Title<input name="title" required /></label>
+          <label>Image URL<input name="image" required /></label>
+          <label>Image Alt<input name="imageAlt" required /></label>
+          <label>Month<input name="month" placeholder="Oct 2026" required /></label>
+          <label>Price<input name="price" placeholder="$2,450" required /></label>
+          <label>Original Price<input name="originalPrice" placeholder="$3,320" required /></label>
+          <label>Save Value<input name="saveValue" placeholder="Save $870" required /></label>
+          <label>Badge<input name="badge" placeholder="SAVE 26%" required /></label>
+          <label>Topline<input name="topline" placeholder="10 days | Family-friendly highlights" required /></label>
+          <label>Meta<input name="meta" placeholder="Beijing, Chengdu, Shanghai" required /></label>
+          <label>Description<textarea name="description" rows="3" required></textarea></label>
+          <label>Date Line<input name="dateLine" required /></label>
+          <label>Includes<input name="includes" required /></label>
+          <label>
+            Keywords
+            <input name="keywords" placeholder="family beijing shanghai panda" required />
+            <button id="suggestKeywordsBtn" class="secondary small-btn" type="button">
+              Generate Keywords
+            </button>
+          </label>
+          <label>
+            Categories (comma separated)
+            <input name="category" placeholder="culture, food" required />
+            <button id="suggestCategoriesBtn" class="secondary small-btn" type="button">
+              Suggest Categories
+            </button>
+          </label>
+          <label>Tags (comma separated)<input name="tags" placeholder="Family, Flexible" required /></label>
+          <label class="check">
+            <input type="checkbox" name="recentViewed" />
+            Add to recently viewed
+          </label>
+          <div class="actions">
+            <button id="submitDealBtn" type="submit">Add Deal</button>
+            <button id="cancelEditBtn" class="secondary" type="button">Cancel Edit</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <h2>Existing Deals in JSON</h2>
+        </div>
+        <div class="row row-search">
+          <label class="search-label">
+            Search by title
+            <input id="dealSearchInput" type="text" placeholder="Type deal title..." />
+          </label>
+        </div>
+        <ul id="existingList" class="deal-list"></ul>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <h2>Current New Deals</h2>
+          <button id="clearAdded" type="button">Clear Added</button>
+        </div>
+        <ul id="addedList" class="deal-list"></ul>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <h2>Payment Config</h2>
+        </div>
+        <div class="grid payment-grid">
+          <label>
+            Provider
+            <input id="paymentProviderInput" type="text" placeholder="Stripe" />
+          </label>
+          <label>
+            Deposit URL
+            <input id="paymentDepositUrlInput" type="url" placeholder="https://buy.stripe.com/..." />
+          </label>
+          <label>
+            Full URL
+            <input id="paymentFullUrlInput" type="url" placeholder="https://buy.stripe.com/..." />
+          </label>
+          <label>
+            Manual Email
+            <input id="paymentManualEmailInput" type="email" placeholder="275364182@qq.com" />
+          </label>
+          <label>
+            Manual Phone
+            <input id="paymentManualPhoneInput" type="text" placeholder="13980077660" />
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <h2>Export JSON</h2>
+          <div class="deal-item-actions">
+            <button id="clearDraft" class="danger" type="button">Clear Local Draft</button>
+            <button id="downloadJson" class="secondary" type="button">Download deals.json</button>
+            <button id="copyJson" type="button">Copy JSON</button>
+          </div>
+        </div>
+        <textarea id="jsonOutput" rows="16" readonly></textarea>
+        <p id="status"></p>
+      </section>
+    </main>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>

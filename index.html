@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinatraveldeal | USA to China Travel</title>
+    <meta
+      name="description"
+      content="Travel from the U.S. to China with curated routes, cultural experiences, and authentic food journeys across Beijing, Shanghai, Xi'an, Chengdu, and Guilin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="promo-strip">
+      <div class="container promo-inner">
+        <span class="promo-tag">LAST CHANCE</span>
+        <p>Book now and get complimentary China cultural add-ons on selected departures.</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top">Chinatraveldeal</a>
+        <nav class="nav">
+          <a href="#deals">Deals</a>
+          <a href="#routes">Routes</a>
+          <a href="#culture">Culture</a>
+          <a href="#food">Food</a>
+          <a href="#packages">Packages</a>
+          <a href="#payment">Payment</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn btn-small" href="#booking">Plan My China Trip</a>
+      </div>
+    </header>
+    <div class="deal-nav">
+      <div class="container deal-nav-wrap">
+        <a class="deal-nav-item is-active" href="#deals">Deals</a>
+        <a class="deal-nav-item" href="#routes">Tours</a>
+        <a class="deal-nav-item" href="#food">Food Journeys</a>
+        <a class="deal-nav-item" href="#culture">Culture Programs</a>
+        <a class="deal-nav-item" href="#packages">Hotels & Upgrades</a>
+      </div>
+    </div>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-carousel" id="heroCarousel">
+            <article class="hero-slide is-active" data-slide>
+              <div class="hero-content">
+                <p class="eyebrow">Bucket-list China experiences at unbeatable value</p>
+                <h1>USA to China Deals with Culture and Food Included</h1>
+                <p class="hero-text">
+                  Handpicked China itineraries for U.S. travelers with flights,
+                  bilingual support, cultural immersion, and authentic food trails.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="#deals">View Top Deals</a>
+                  <a class="btn btn-ghost" href="#booking">Build Custom Trip</a>
+                </div>
+              </div>
+            </article>
+            <article class="hero-slide" data-slide>
+              <div class="hero-content">
+                <p class="eyebrow">Chinese culture curated by local hosts</p>
+                <h1>From Great Wall Legends to Ancient Town Stories</h1>
+                <p class="hero-text">
+                  Explore history with expert guides, calligraphy workshops, and
+                  festival programs built into your package.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="#culture">Explore Culture</a>
+                  <a class="btn btn-ghost" href="#packages">See Packages</a>
+                </div>
+              </div>
+            </article>
+            <article class="hero-slide" data-slide>
+              <div class="hero-content">
+                <p class="eyebrow">Regional Chinese food programs</p>
+                <h1>Beijing Duck, Sichuan Spice, Cantonese Classics</h1>
+                <p class="hero-text">
+                  Add curated food experiences to any route with market walks,
+                  chef-led classes, and signature local dining.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="#food">Discover Food Tours</a>
+                  <a class="btn btn-ghost" href="#booking">Request Quote</a>
+                </div>
+              </div>
+            </article>
+            <div class="hero-dots">
+              <button class="dot is-active" type="button" data-dot="0" aria-label="Slide 1"></button>
+              <button class="dot" type="button" data-dot="1" aria-label="Slide 2"></button>
+              <button class="dot" type="button" data-dot="2" aria-label="Slide 3"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-bar">
+        <div class="container trust-grid">
+          <article>
+            <h4>Rated Excellent</h4>
+            <p>Thousands of verified U.S. travelers and repeat guests.</p>
+          </article>
+          <article>
+            <h4>Flexible Payment</h4>
+            <p>Secure your seat now and split payments before departure.</p>
+          </article>
+          <article>
+            <h4>Culture + Food Focus</h4>
+            <p>Every route can include Chinese culture and culinary activities.</p>
+          </article>
+          <article>
+            <h4>Visa Support</h4>
+            <p>Step-by-step document checklist for U.S. passport holders.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="search-strip">
+        <div class="container">
+          <form class="deal-search" id="dealSearchForm">
+            <label>
+              Destination
+              <input
+                id="destinationInput"
+                name="destination"
+                type="text"
+                list="destinationOptions"
+                placeholder="Beijing, Shanghai, Chengdu..."
+              />
+            </label>
+            <label>
+              Departure Month
+              <select id="monthSelect" name="month">
+                <option value="">Any month</option>
+                <option value="Sep 2026">Sep 2026</option>
+                <option value="Oct 2026">Oct 2026</option>
+                <option value="Nov 2026">Nov 2026</option>
+                <option value="Dec 2026">Dec 2026</option>
+              </select>
+            </label>
+            <button class="btn" type="submit">Search Deals</button>
+            <button class="btn btn-outline" id="clearSearchBtn" type="button">Clear</button>
+          </form>
+          <datalist id="destinationOptions"></datalist>
+        </div>
+      </section>
+
+      <section class="section region-section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Where in China Would You Like to Go?</h2>
+            <a class="link-more" href="#packages">Browse all routes</a>
+          </div>
+          <div class="region-tabs" id="regionTabs">
+            <button class="region-tab is-active" type="button" data-region="popular">
+              Popular <span>18 deals</span>
+            </button>
+            <button class="region-tab" type="button" data-region="culture">
+              Culture <span>12 deals</span>
+            </button>
+            <button class="region-tab" type="button" data-region="food">
+              Food <span>9 deals</span>
+            </button>
+            <button class="region-tab" type="button" data-region="nature">
+              Nature <span>7 deals</span>
+            </button>
+          </div>
+          <div class="region-content is-active" data-region-panel="popular">
+            <div class="region-list">
+              <span>Beijing</span>
+              <span>Shanghai</span>
+              <span>Xi'an</span>
+              <span>Chengdu</span>
+              <span>Hangzhou</span>
+              <span>Guilin</span>
+            </div>
+          </div>
+          <div class="region-content" data-region-panel="culture">
+            <div class="region-list">
+              <span>Xi'an</span>
+              <span>Pingyao</span>
+              <span>Suzhou</span>
+              <span>Nanjing</span>
+              <span>Luoyang</span>
+              <span>Dunhuang</span>
+            </div>
+          </div>
+          <div class="region-content" data-region-panel="food">
+            <div class="region-list">
+              <span>Beijing</span>
+              <span>Chengdu</span>
+              <span>Guangzhou</span>
+              <span>Chongqing</span>
+              <span>Xi'an</span>
+              <span>Shanghai</span>
+            </div>
+          </div>
+          <div class="region-content" data-region-panel="nature">
+            <div class="region-list">
+              <span>Guilin</span>
+              <span>Jiuzhaigou</span>
+              <span>Zhangjiajie</span>
+              <span>Yunnan</span>
+              <span>Yellow Mountains</span>
+              <span>Tibet Edge Routes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="deals" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Popular U.S. to China Deals</h2>
+            <a class="link-more" href="#packages">View all deals</a>
+          </div>
+          <div class="deal-filters" id="dealFilters"></div>
+          <p id="dealResultMeta" class="deal-result-meta">Loading deals...</p>
+          <div class="deal-grid" id="dealGrid"></div>
+        </div>
+      </section>
+      <section class="section recent-section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Recently Viewed</h2>
+            <a class="link-more" href="#deals">Back to deals</a>
+          </div>
+          <div class="recent-grid" id="recentGrid"></div>
+        </div>
+      </section>
+
+      <section class="section browse-section">
+        <div class="container browse-wrap">
+          <h2>Browse More China Deals</h2>
+          <div class="pager" id="dealPager"></div>
+        </div>
+      </section>
+
+      <section id="routes" class="section">
+        <div class="container">
+          <h2>Top U.S. to China Routes</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Classic China Route</h3>
+              <p>
+                U.S. departure, Beijing, Xi'an, Shanghai. Ideal for first-time
+                travelers who want iconic highlights.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Southwest Discovery</h3>
+              <p>
+                Chengdu, Leshan, and Jiuzhaigou with panda visits, mountain
+                temples, and scenic valleys.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Yangtze + Ancient Towns</h3>
+              <p>
+                Shanghai, Hangzhou, and water towns with optional Yangtze cruise
+                extension.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="culture" class="section section-alt">
+        <div class="container">
+          <h2>Chinese Culture Experiences</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Traditional Arts</h3>
+              <p>
+                Peking Opera backstage visit, calligraphy workshop, and Hanfu
+                photo session in historic districts.
+              </p>
+            </article>
+            <article class="card">
+              <h3>History & Heritage</h3>
+              <p>
+                Guided storytelling at the Great Wall, Forbidden City, Terracotta
+                Warriors, and UNESCO old towns.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Festival Programs</h3>
+              <p>
+                Seasonal trips around Chinese New Year, Dragon Boat Festival, and
+                Mid-Autumn celebrations.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="food" class="section">
+        <div class="container">
+          <h2>Chinese Food Journey Programs</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Beijing Flavor Trail</h3>
+              <p>
+                Peking duck banquet, hutong street food walk, and tea pairing with
+                local food historians.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Sichuan Spice Experience</h3>
+              <p>
+                Hotpot tasting, mapo tofu cooking class, and market-to-table chef
+                workshop in Chengdu.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Cantonese Fine Dining</h3>
+              <p>
+                Dim sum masterclass, seafood night market tour, and premium
+                Cantonese banquet in Guangzhou.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="packages" class="section section-alt">
+        <div class="container">
+          <h2>More China Package Deals</h2>
+          <div class="packages">
+            <article class="package">
+              <h3>China First Journey</h3>
+              <p>8 days | Beijing + Xi'an + Shanghai | Flights from U.S. optional</p>
+              <strong>From $2,690 / person</strong>
+            </article>
+            <article class="package">
+              <h3>Culture & Cuisine Immersion</h3>
+              <p>10 days | Beijing + Chengdu + Guangzhou food and culture focus</p>
+              <strong>From $3,280 / person</strong>
+            </article>
+            <article class="package">
+              <h3>Luxury China Signature</h3>
+              <p>12 days | Private guide, high-speed rail, premium hotels</p>
+              <strong>From $4,980 / person</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonial-section">
+        <div class="container">
+          <div class="section-head">
+            <h2>What U.S. Travelers Say</h2>
+            <a class="link-more" href="#booking">Plan your trip</a>
+          </div>
+          <div class="testimonials">
+            <article class="testimonial">
+              <p>
+                "Our Beijing and Xi'an trip was smooth from visa prep to airport
+                transfers. The culture guides were excellent."
+              </p>
+              <strong>- Emily R., San Francisco</strong>
+            </article>
+            <article class="testimonial">
+              <p>
+                "The Sichuan food program was unforgettable. Hotpot class and local
+                markets were highlights of the whole journey."
+              </p>
+              <strong>- Daniel M., Chicago</strong>
+            </article>
+            <article class="testimonial">
+              <p>
+                "Great value and clear pricing. Our family loved the mix of
+                landmarks, cultural workshops, and kid-friendly pacing."
+              </p>
+              <strong>- Sarah T., Seattle</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section newsletter-section">
+        <div class="container newsletter-wrap">
+          <div>
+            <h2>Get New U.S.-to-China Deals First</h2>
+            <p>
+              Be the first to receive new departure dates, seasonal promotions, and
+              culture + food package updates.
+            </p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm">
+            <label>
+              First Name
+              <input name="firstName" type="text" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" required />
+            </label>
+            <button class="btn" type="submit">Subscribe</button>
+            <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container about">
+          <div>
+            <h2>Why U.S. Travelers Choose Our China Team</h2>
+            <ul class="ticks">
+              <li>Bilingual U.S. + China support before and during the trip</li>
+              <li>Visa and entry guidance for smooth cross-border planning</li>
+              <li>Verified local partners in major Chinese cities</li>
+              <li>Flexible pace for families, seniors, and private groups</li>
+            </ul>
+          </div>
+          <aside class="stat-box">
+            <p><strong>4.9/5</strong> average traveler rating</p>
+            <p><strong>9,500+</strong> U.S.-to-China guests served</p>
+            <p><strong>30+</strong> curated culture and food activities</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="payment" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Online Payment</h2>
+            <a class="link-more" href="#booking">Need help booking?</a>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3>Pay Deposit</h3>
+              <p>Secure your seat with a deposit payment.</p>
+              <p id="depositPaymentStatus" class="deal-meta-secondary"></p>
+              <a id="payDepositLink" class="btn btn-small" href="#contact">Pay Deposit</a>
+            </article>
+            <article class="card">
+              <h3>Pay Full Amount</h3>
+              <p>Complete payment for confirmed itinerary.</p>
+              <p id="fullPaymentStatus" class="deal-meta-secondary"></p>
+              <a id="payFullLink" class="btn btn-small" href="#contact">Pay Full</a>
+            </article>
+            <article class="card">
+              <h3>Manual Support</h3>
+              <p>Email: <a href="mailto:275364182@qq.com">275364182@qq.com</a></p>
+              <p>Phone: <a href="tel:13980077660">13980077660</a></p>
+              <p class="deal-meta-secondary">Available 7 days a week.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="section section-alt">
+        <div class="container form-wrap">
+          <div>
+            <h2>Get Your U.S. to China Quote</h2>
+            <p>
+              Share your travel dates, preferred cities, and interests. We will
+              send a personalized China itinerary within 24 hours.
+            </p>
+          </div>
+          <form id="bookingForm" class="booking-form">
+            <label>
+              Full Name
+              <input name="name" type="text" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" required />
+            </label>
+            <label>
+              Departure Date
+              <input name="date" type="date" required />
+            </label>
+            <label>
+              Travelers
+              <input name="travelers" type="number" min="1" value="2" required />
+            </label>
+            <label>
+              China Route Preference
+              <select name="destination" required>
+                <option value="">Select one</option>
+                <option>Beijing + Xi'an + Shanghai</option>
+                <option>Shanghai + Suzhou + Hangzhou</option>
+                <option>Chengdu + Guilin + Guangzhou</option>
+                <option>Custom Multi-City China Trip</option>
+              </select>
+            </label>
+            <label>
+              Main Interest
+              <select name="interest" required>
+                <option value="">Select one</option>
+                <option>Chinese Culture Experiences</option>
+                <option>Chinese Food Programs</option>
+                <option>Family Friendly Highlights</option>
+                <option>Luxury Private Tour</option>
+              </select>
+            </label>
+            <label>
+              Notes
+              <textarea
+                name="notes"
+                rows="4"
+                placeholder="Tell us your departure city in the U.S., budget, and pace."
+              ></textarea>
+            </label>
+            <button class="btn" type="submit">Send My Trip Request</button>
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Chinatraveldeal</h4>
+          <p>Specialized in U.S.-to-China travel planning and operations.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:275364182@qq.com">275364182@qq.com</a></p>
+          <p>Phone: <a href="tel:13980077660">13980077660</a></p>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <p><a href="./privacy.html">Privacy Policy</a></p>
+          <p><a href="./terms.html">Terms of Service</a></p>
+          <p><a href="./admin.html">Deal Data Builder</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f4f7fc;
+  color: #123;
+}
+
+.container {
+  width: min(980px, 94%);
+  margin: 1.2rem auto 2rem;
+}
+
+.head h1 {
+  margin: 0;
+}
+
+.head p {
+  margin: 0.5rem 0;
+  color: #4a5f7a;
+}
+
+.head a {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #d4dfef;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.full-line {
+  grid-column: 1 / -1;
+}
+
+.mode-text {
+  margin: 0;
+  color: #1f4d86;
+  font-weight: 700;
+}
+
+.form-errors {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #b23b3b;
+}
+
+.form-errors:empty {
+  display: none;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid #bfd1e8;
+  border-radius: 8px;
+  padding: 0.55rem;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+button {
+  border: 1px solid #0d6efd;
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.secondary {
+  border-color: #8ca6c7;
+  background: #f2f6fd;
+  color: #1f4d86;
+}
+
+button.small-btn {
+  margin-top: 0.35rem;
+  width: fit-content;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.78rem;
+}
+
+button.danger {
+  border-color: #d06060;
+  background: #fff3f3;
+  color: #a23d3d;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.row-search {
+  margin-top: 0.5rem;
+}
+
+.search-label {
+  width: min(420px, 100%);
+}
+
+.payment-grid {
+  margin-top: 0.5rem;
+}
+
+.deal-list {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.deal-list li {
+  margin-bottom: 0.4rem;
+}
+
+.deal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.deal-item-title {
+  color: #23466f;
+  font-size: 0.92rem;
+}
+
+.deal-item-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.deal-item-actions button {
+  padding: 0.35rem 0.55rem;
+  font-size: 0.8rem;
+}
+
+#status {
+  margin: 0.5rem 0 0;
+  color: #2b4f79;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deal-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
