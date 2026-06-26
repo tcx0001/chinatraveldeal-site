@@ -15,13 +15,11 @@ const monthSelect = document.getElementById("monthSelect");
 const clearSearchBtn = document.getElementById("clearSearchBtn");
 const dealGrid = document.getElementById("dealGrid");
 const recentGrid = document.getElementById("recentGrid");
-const dealPager = document.getElementById("dealPager");
 const payDepositLink = document.getElementById("payDepositLink");
 const payFullLink = document.getElementById("payFullLink");
 const depositPaymentStatus = document.getElementById("depositPaymentStatus");
 const fullPaymentStatus = document.getElementById("fullPaymentStatus");
 
-const DEALS_PER_PAGE = 3;
 let dealsData = [];
 let filtersData = [];
 let destinationsData = [];
@@ -192,9 +190,8 @@ if (regionTabs.length > 0 && regionPanels.length > 0) {
   });
 }
 
-if (dealGrid && dealResultMeta && dealPager && dealFiltersContainer) {
+if (dealGrid && dealResultMeta && dealFiltersContainer) {
   let activeFilter = "all";
-  let currentPage = 1;
 
   const renderDealCard = (deal) => `
     <article class="deal-card">
@@ -239,20 +236,6 @@ if (dealGrid && dealResultMeta && dealPager && dealFiltersContainer) {
       <p>${deal.description || ""}</p>
     </article>
   `;
-
-  const renderPager = (page, totalPages) => {
-    if (totalPages <= 1) {
-      dealPager.innerHTML = "";
-      return;
-    }
-
-    const pageButtons = Array.from({ length: totalPages }, (_, index) => {
-      const pageNumber = index + 1;
-      return `<button class="pager-btn ${pageNumber === page ? "is-active" : ""}" type="button" data-page="${pageNumber}">${pageNumber}</button>`;
-    }).join("");
-
-    dealPager.innerHTML = `${pageButtons}<button class="pager-btn" type="button" data-page="next">Next</button>`;
-  };
 
   const renderFilterButtons = () => {
     const defaultFilters = [
@@ -321,18 +304,13 @@ if (dealGrid && dealResultMeta && dealPager && dealFiltersContainer) {
 
   const refreshDeals = () => {
     const filteredDeals = getFilteredDeals();
-    const totalPages = Math.max(1, Math.ceil(filteredDeals.length / DEALS_PER_PAGE));
-    currentPage = Math.min(currentPage, totalPages);
-    const startIndex = (currentPage - 1) * DEALS_PER_PAGE;
-    const pageDeals = filteredDeals.slice(startIndex, startIndex + DEALS_PER_PAGE);
 
     dealGrid.innerHTML =
-      pageDeals.length === 0
+      filteredDeals.length === 0
         ? '<p class="deal-empty">No deals matched your filters. Try another destination or month.</p>'
-        : pageDeals.map((deal) => renderDealCard(deal)).join("");
+        : filteredDeals.map((deal) => renderDealCard(deal)).join("");
 
     dealResultMeta.textContent = `Showing ${filteredDeals.length} featured deal${filteredDeals.length === 1 ? "" : "s"}`;
-    renderPager(currentPage, totalPages);
   };
 
   const bindFilterEvents = () => {
@@ -355,7 +333,6 @@ if (dealGrid && dealResultMeta && dealPager && dealFiltersContainer) {
         "Could not load deals data. Please refresh after deployment.";
       dealGrid.innerHTML =
         '<p class="deal-empty">Unable to load deal data right now. Please try again later.</p>';
-      dealPager.innerHTML = "";
       if (recentGrid) {
         recentGrid.innerHTML = "";
       }
@@ -379,14 +356,12 @@ if (dealGrid && dealResultMeta && dealPager && dealFiltersContainer) {
   if (dealSearchForm) {
     dealSearchForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      currentPage = 1;
       refreshDeals();
     });
   }
 
   if (monthSelect) {
     monthSelect.addEventListener("change", () => {
-      currentPage = 1;
       refreshDeals();
     });
   }
@@ -399,36 +374,9 @@ if (dealGrid && dealResultMeta && dealPager && dealFiltersContainer) {
       dealFilters.forEach((item) => {
         item.classList.toggle("active", item.dataset.filter === "all");
       });
-      currentPage = 1;
       refreshDeals();
     });
   }
-
-  dealPager.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLButtonElement)) {
-      return;
-    }
-
-    const pageValue = target.dataset.page;
-    if (!pageValue) {
-      return;
-    }
-
-    const filteredDeals = getFilteredDeals();
-    const totalPages = Math.max(1, Math.ceil(filteredDeals.length / DEALS_PER_PAGE));
-
-    if (pageValue === "next") {
-      currentPage = currentPage >= totalPages ? 1 : currentPage + 1;
-    } else {
-      const selectedPage = Number(pageValue);
-      if (!Number.isNaN(selectedPage)) {
-        currentPage = selectedPage;
-      }
-    }
-
-    refreshDeals();
-  });
 
   initializeDealsSection();
 }
