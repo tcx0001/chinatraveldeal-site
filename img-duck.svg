@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#e9ddc8"/>
+  <rect x="70" y="70" width="1060" height="560" rx="26" fill="#f6efe3"/>
+
+  <!-- roast ducks hanging -->
+  <g>
+    <rect x="210" y="120" width="780" height="14" rx="7" fill="#5a3d23" />
+    <path d="M310 134 v36" stroke="#5a3d23" stroke-width="6" />
+    <path d="M600 134 v36" stroke="#5a3d23" stroke-width="6" />
+    <path d="M890 134 v36" stroke="#5a3d23" stroke-width="6" />
+    <ellipse cx="310" cy="250" rx="92" ry="120" fill="#8f2f1f" />
+    <ellipse cx="600" cy="250" rx="92" ry="120" fill="#9d3622" />
+    <ellipse cx="890" cy="250" rx="92" ry="120" fill="#8f2f1f" />
+    <ellipse cx="310" cy="230" rx="68" ry="82" fill="#c56d38" />
+    <ellipse cx="600" cy="230" rx="68" ry="82" fill="#d1783f" />
+    <ellipse cx="890" cy="230" rx="68" ry="82" fill="#c56d38" />
+  </g>
+
+  <!-- plated peking duck slices -->
+  <ellipse cx="600" cy="470" rx="280" ry="110" fill="#ffffff" />
+  <g fill="#b74a2c">
+    <ellipse cx="500" cy="470" rx="90" ry="34" transform="rotate(-10 500 470)" />
+    <ellipse cx="600" cy="450" rx="98" ry="35" transform="rotate(7 600 450)" />
+    <ellipse cx="700" cy="475" rx="90" ry="33" transform="rotate(-6 700 475)" />
+  </g>
+</svg>

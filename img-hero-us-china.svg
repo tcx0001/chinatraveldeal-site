@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2f64" />
+      <stop offset="100%" stop-color="#7c2a2a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)" />
+
+  <!-- Left: China flag block -->
+  <rect x="110" y="130" width="560" height="330" rx="18" fill="#cc1d1d" opacity="0.9" />
+  <polygon points="205,195 221,242 271,242 231,271 247,318 205,289 163,318 179,271 139,242 189,242" fill="#ffd54f" />
+  <polygon points="315,165 323,188 347,188 329,202 336,225 315,211 294,225 301,202 283,188 307,188" fill="#ffd54f" />
+  <polygon points="355,235 363,258 387,258 369,272 376,295 355,281 334,295 341,272 323,258 347,258" fill="#ffd54f" />
+  <polygon points="344,307 352,330 376,330 358,344 365,367 344,353 323,367 330,344 312,330 336,330" fill="#ffd54f" />
+  <polygon points="302,364 310,387 334,387 316,401 323,424 302,410 281,424 288,401 270,387 294,387" fill="#ffd54f" />
+
+  <!-- Right: simplified US flag block -->
+  <rect x="930" y="130" width="560" height="330" rx="18" fill="#ffffff" opacity="0.95" />
+  <g fill="#c91f2a">
+    <rect x="930" y="130" width="560" height="26" />
+    <rect x="930" y="182" width="560" height="26" />
+    <rect x="930" y="234" width="560" height="26" />
+    <rect x="930" y="286" width="560" height="26" />
+    <rect x="930" y="338" width="560" height="26" />
+    <rect x="930" y="390" width="560" height="26" />
+    <rect x="930" y="442" width="560" height="18" />
+  </g>
+  <rect x="930" y="130" width="260" height="182" fill="#1d3f96" />
+  <g fill="#ffffff" opacity="0.9">
+    <circle cx="962" cy="156" r="3.5" /><circle cx="997" cy="156" r="3.5" /><circle cx="1032" cy="156" r="3.5" />
+    <circle cx="1067" cy="156" r="3.5" /><circle cx="1102" cy="156" r="3.5" /><circle cx="1137" cy="156" r="3.5" />
+    <circle cx="979" cy="178" r="3.5" /><circle cx="1014" cy="178" r="3.5" /><circle cx="1049" cy="178" r="3.5" />
+    <circle cx="1084" cy="178" r="3.5" /><circle cx="1119" cy="178" r="3.5" />
+    <circle cx="962" cy="200" r="3.5" /><circle cx="997" cy="200" r="3.5" /><circle cx="1032" cy="200" r="3.5" />
+    <circle cx="1067" cy="200" r="3.5" /><circle cx="1102" cy="200" r="3.5" /><circle cx="1137" cy="200" r="3.5" />
+    <circle cx="979" cy="222" r="3.5" /><circle cx="1014" cy="222" r="3.5" /><circle cx="1049" cy="222" r="3.5" />
+    <circle cx="1084" cy="222" r="3.5" /><circle cx="1119" cy="222" r="3.5" />
+    <circle cx="962" cy="244" r="3.5" /><circle cx="997" cy="244" r="3.5" /><circle cx="1032" cy="244" r="3.5" />
+    <circle cx="1067" cy="244" r="3.5" /><circle cx="1102" cy="244" r="3.5" /><circle cx="1137" cy="244" r="3.5" />
+  </g>
+
+  <!-- Center handshake icon -->
+  <circle cx="800" cy="355" r="82" fill="#f7e3c8" opacity="0.95" />
+  <path d="M742 372c17-22 34-36 58-36 24 0 41 14 58 36" fill="none" stroke="#0f2f64" stroke-width="15" stroke-linecap="round" />
+  <rect x="724" y="370" width="46" height="34" rx="9" fill="#1d3f96" />
+  <rect x="830" y="370" width="46" height="34" rx="9" fill="#c91f2a" />
+</svg>

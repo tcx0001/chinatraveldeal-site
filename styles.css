@@ -176,12 +176,12 @@ a {
 
 .hero-slide:nth-child(1) {
   background-image: linear-gradient(120deg, rgba(2, 31, 74, 0.92), rgba(18, 97, 185, 0.72)),
-    url("./hero-us-china.svg");
+    url("https://images.unsplash.com/photo-1547981609-4b6bf67db8f6?auto=format&fit=crop&w=1400&q=60");
 }
 
 .hero-slide:nth-child(2) {
   background-image: linear-gradient(120deg, rgba(53, 14, 10, 0.9), rgba(173, 63, 43, 0.7)),
-    url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/20190501120517%21Great_Wall_at_Jinshanling-edit.jpg/1280px-20190501120517%21Great_Wall_at_Jinshanling-edit.jpg");
+    url("https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=1400&q=60");
 }
 
 .hero-slide:nth-child(3) {
@@ -227,9 +227,48 @@ h4 {
   max-width: 62ch;
 }
 
+.hero-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 1.2rem;
+}
+
+.hero-flags span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(2, 21, 54, 0.28);
+  color: #f4f8ff;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
 .hero-actions {
   display: flex;
   gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.hero .btn {
+  min-width: 190px;
+  box-shadow: 0 8px 24px rgba(3, 28, 74, 0.35);
+}
+
+.hero .btn:hover {
+  transform: translateY(-1px);
+}
+
+.hero .btn-ghost {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.hero .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .hero-dots {
@@ -794,11 +833,6 @@ textarea:focus {
   }
 
   .deal-actions {
-    flex-direction: column;
-  }
-
-  .browse-wrap {
-    align-items: flex-start;
     flex-direction: column;
   }
 

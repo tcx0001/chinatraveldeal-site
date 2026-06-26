@@ -28,8 +28,8 @@
   "deals": [
     {
     "title": "10 Days China Discovery",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Forbidden_City_Beijing_Shenwumen_Gate.JPG/1280px-Forbidden_City_Beijing_Shenwumen_Gate.JPG",
-    "imageAlt": "Forbidden City in Beijing",
+    "image": "https://images.unsplash.com/photo-1527922891260-918d42a4efc8?auto=format&fit=crop&w=1200&q=60",
+    "imageAlt": "Terracotta Warriors in Xi'an",
     "category": ["culture", "small-group"],
     "month": "Sep 2026",
     "keywords": "beijing xian shanghai culture history",
@@ -47,8 +47,8 @@
     },
     {
     "title": "12 Days Culture & Cuisine China",
-    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=60",
-    "imageAlt": "Local Chinese food market scene",
+    "image": "https://images.unsplash.com/photo-1771810669253-78f10867ddd7?auto=format&fit=crop&w=1200&q=60",
+    "imageAlt": "Sichuan Opera face-changing performance",
     "category": ["culture", "food"],
     "month": "Oct 2026",
     "keywords": "beijing chengdu guangzhou food culture cuisine",
@@ -66,8 +66,8 @@
     },
     {
     "title": "14 Days Premium China Signature",
-    "image": "https://images.unsplash.com/photo-1510337550647-e84f83e341ca?auto=format&fit=crop&w=1200&q=60",
-    "imageAlt": "Shanghai skyline at dusk",
+    "image": "https://images.unsplash.com/photo-1659233306527-226a26a08634?auto=format&fit=crop&w=1200&q=60",
+    "imageAlt": "Guilin karst mountains and Li River",
     "category": ["luxury"],
     "month": "Nov 2026",
     "keywords": "shanghai hangzhou guilin hong kong luxury premium",
@@ -86,7 +86,7 @@
     {
     "title": "9 Days Beijing + Xi'an Heritage Trail",
     "image": "https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=1200&q=60",
-    "imageAlt": "Great Wall landscape",
+    "imageAlt": "Great Wall of China landscape",
     "category": ["culture", "small-group"],
     "month": "Oct 2026",
     "keywords": "beijing xian heritage wall museum",
@@ -104,8 +104,8 @@
     },
     {
     "title": "11 Days China Food Capitals",
-    "image": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=1200&q=60",
-    "imageAlt": "Chinese street food spread",
+    "image": "https://images.unsplash.com/photo-1762305196033-15c8ab8f3b61?auto=format&fit=crop&w=1200&q=60",
+    "imageAlt": "Spicy red-broth hot pot",
     "category": ["food", "small-group"],
     "month": "Dec 2026",
     "keywords": "chengdu guangzhou shanghai food tasting markets",
@@ -123,8 +123,8 @@
     },
     {
     "title": "8 Days Shanghai + Hangzhou Escape",
-    "image": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1200&q=60",
-    "imageAlt": "Shanghai skyline and river",
+    "image": "https://images.unsplash.com/photo-1632547331165-68a98018919d?auto=format&fit=crop&w=1200&q=60",
+    "imageAlt": "Shanghai Pudong skyline at night",
     "category": ["culture"],
     "month": "Sep 2026",
     "keywords": "shanghai hangzhou tea culture city break",
@@ -180,8 +180,8 @@
     },
     {
     "title": "10 Days Family China Discovery",
-    "image": "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=1200&q=60",
-    "imageAlt": "Family travel in China",
+    "image": "https://images.unsplash.com/photo-1566487097168-e91a4f38bee2?auto=format&fit=crop&w=1200&q=60",
+    "imageAlt": "Giant panda experience in Chengdu",
     "category": ["culture", "food"],
     "month": "Oct 2026",
     "keywords": "family beijing shanghai panda food activities",

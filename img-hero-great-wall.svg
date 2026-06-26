@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9cc5f0" />
+      <stop offset="100%" stop-color="#dbe9f7" />
+    </linearGradient>
+    <linearGradient id="hillA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5e7a45" />
+      <stop offset="100%" stop-color="#3f5d34" />
+    </linearGradient>
+    <linearGradient id="hillB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#708a52" />
+      <stop offset="100%" stop-color="#4d6b3f" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)" />
+
+  <path d="M0 500 C260 410, 470 450, 700 360 C900 280, 1150 320, 1600 250 L1600 900 L0 900 Z" fill="url(#hillA)" />
+  <path d="M0 610 C250 560, 520 590, 780 520 C1020 455, 1290 500, 1600 450 L1600 900 L0 900 Z" fill="url(#hillB)" />
+
+  <!-- Great Wall route -->
+  <path d="M130 600 C300 540, 430 495, 630 470 C820 445, 940 370, 1120 350 C1260 335, 1380 285, 1510 220"
+        fill="none" stroke="#bea786" stroke-width="36" stroke-linecap="round" />
+  <path d="M130 600 C300 540, 430 495, 630 470 C820 445, 940 370, 1120 350 C1260 335, 1380 285, 1510 220"
+        fill="none" stroke="#917b5f" stroke-width="22" stroke-linecap="round" />
+
+  <!-- Watch towers -->
+  <g fill="#8b755a">
+    <rect x="210" y="546" width="50" height="62" />
+    <rect x="365" y="510" width="48" height="60" />
+    <rect x="535" y="476" width="52" height="64" />
+    <rect x="730" y="440" width="50" height="62" />
+    <rect x="930" y="390" width="52" height="66" />
+    <rect x="1145" y="340" width="54" height="68" />
+    <rect x="1325" y="292" width="56" height="72" />
+  </g>
+</svg>

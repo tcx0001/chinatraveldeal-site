@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#f2e7d8"/>
+  <rect x="70" y="70" width="1060" height="560" rx="22" fill="#faf5ee"/>
+
+  <!-- main platter -->
+  <ellipse cx="600" cy="420" rx="340" ry="145" fill="#ffffff"/>
+  <ellipse cx="600" cy="420" rx="300" ry="112" fill="#f8fbff"/>
+
+  <!-- dim sum baskets -->
+  <circle cx="360" cy="250" r="120" fill="#c38f4b"/>
+  <circle cx="360" cy="250" r="92" fill="#e8cfaa"/>
+  <circle cx="840" cy="250" r="120" fill="#c38f4b"/>
+  <circle cx="840" cy="250" r="92" fill="#e8cfaa"/>
+
+  <!-- dim sums -->
+  <g fill="#fff2e2" stroke="#e5d3bc" stroke-width="3">
+    <ellipse cx="320" cy="240" rx="36" ry="25"/>
+    <ellipse cx="390" cy="265" rx="36" ry="25"/>
+    <ellipse cx="800" cy="245" rx="36" ry="25"/>
+    <ellipse cx="870" cy="268" rx="36" ry="25"/>
+    <ellipse cx="600" cy="420" rx="70" ry="46"/>
+  </g>
+
+  <!-- garnish -->
+  <g fill="#6dac66">
+    <ellipse cx="600" cy="420" rx="18" ry="7"/>
+    <ellipse cx="586" cy="408" rx="12" ry="6"/>
+    <ellipse cx="614" cy="408" rx="12" ry="6"/>
+  </g>
+</svg>
