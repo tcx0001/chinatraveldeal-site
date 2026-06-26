@@ -569,6 +569,14 @@ h4 {
   box-shadow: var(--shadow);
 }
 
+.section-card-image {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+}
+
 .card p,
 .package p {
   margin: 0;
@@ -650,6 +658,14 @@ h4 {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1rem;
+}
+
+.testimonial-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  object-fit: cover;
+  margin-bottom: 0.55rem;
 }
 
 .testimonial p {
