@@ -198,7 +198,13 @@ if (dealGrid && dealResultMeta && dealPager && dealFiltersContainer) {
 
   const renderDealCard = (deal) => `
     <article class="deal-card">
-      <img class="deal-image" src="${deal.image}" alt="${deal.imageAlt || deal.title}" />
+      <img
+        class="deal-image"
+        loading="lazy"
+        decoding="async"
+        src="${deal.image}"
+        alt="${deal.imageAlt || deal.title}"
+      />
       <div class="deal-body">
         <p class="deal-badge">${deal.badge || "HOT DEAL"}</p>
         <p class="deal-topline">${deal.topline || ""}</p>

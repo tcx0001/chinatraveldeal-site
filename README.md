@@ -10,6 +10,7 @@ Chinese culture experiences and food journey programs.
 - `script.js` - booking/newsletter interactions, hero carousel, region tab switching, data-driven deal rendering (loads `deals.json` config), category + search + month filtering, dynamic pagination
 - `deals.json` - structured data source with `filters`, `destinations`, `payment`, and `deals`
 - `admin.html` / `admin.js` / `admin.css` - visual deal + payment config builder with add/edit/delete, validation, duplicate title check, title search, keyword/category suggestions, local draft autosave/restore, and one-click `deals.json` download
+- `robots.txt` / `sitemap.xml` - search engine crawling and indexing files for GitHub Pages
 - `vercel.json` - deployment defaults and security headers
 
 ## Online payment status

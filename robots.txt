@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://txc0001.github.io/chinatraveldeal-site/sitemap.xml
