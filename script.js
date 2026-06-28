@@ -19,6 +19,8 @@ const payDepositLink = document.getElementById("payDepositLink");
 const payFullLink = document.getElementById("payFullLink");
 const depositPaymentStatus = document.getElementById("depositPaymentStatus");
 const fullPaymentStatus = document.getElementById("fullPaymentStatus");
+const menuToggle = document.getElementById("menuToggle");
+const siteNav = document.getElementById("siteNav");
 
 let dealsData = [];
 let filtersData = [];
@@ -35,6 +37,31 @@ let backendConfig = {
   bookingEndpoint: "",
   newsletterEndpoint: ""
 };
+
+if (menuToggle && siteNav) {
+  const closeMenu = () => {
+    menuToggle.classList.remove("is-open");
+    siteNav.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
+  menuToggle.addEventListener("click", () => {
+    const nextState = !siteNav.classList.contains("is-open");
+    menuToggle.classList.toggle("is-open", nextState);
+    siteNav.classList.toggle("is-open", nextState);
+    menuToggle.setAttribute("aria-expanded", String(nextState));
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      closeMenu();
+    }
+  });
+}
 
 const loadDealsData = async () => {
   try {

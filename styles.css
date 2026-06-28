@@ -72,6 +72,9 @@ a {
 .deal-nav {
   background: #ffffff;
   border-bottom: 1px solid #d5e0ef;
+  position: sticky;
+  top: 65px;
+  z-index: 18;
 }
 
 .deal-nav-wrap {
@@ -79,6 +82,13 @@ a {
   gap: 1rem;
   overflow-x: auto;
   padding: 0.65rem 0;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.deal-nav-wrap::-webkit-scrollbar {
+  display: none;
 }
 
 .deal-nav-item {
@@ -87,6 +97,7 @@ a {
   white-space: nowrap;
   padding: 0.25rem 0.1rem;
   border-bottom: 2px solid transparent;
+  scroll-snap-align: start;
 }
 
 .deal-nav-item.is-active {
@@ -112,6 +123,41 @@ a {
   gap: 1.2rem;
   color: var(--muted);
   font-weight: 500;
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #c9daef;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 0.55rem 0.45rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.24rem;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  background: #1f4777;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .btn {
@@ -800,22 +846,77 @@ textarea:focus {
   color: #bcd8ff;
 }
 
-@media (max-width: 900px) {
-  .trust-grid,
+@media (max-width: 1100px) {
   .deal-grid,
-  .recent-grid,
-  .newsletter-wrap,
-  .testimonials,
-  .about,
-  .form-wrap,
   .cards,
   .packages,
-  .footer-grid {
+  .testimonials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-wrap,
+  .newsletter-wrap,
+  .about {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: min(1120px, 94%);
+  }
+
+  .nav-wrap {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .site-header .btn-small {
+    margin-left: auto;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-header {
+    overflow: visible;
   }
 
   .nav {
     display: none;
+    width: 100%;
+    order: 4;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem;
+    border: 1px solid #d5e3f3;
+    border-radius: 10px;
+    background: #f8fbff;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 0.55rem 0.4rem;
+    border-radius: 8px;
+  }
+
+  .nav a:hover {
+    background: #eaf2ff;
+  }
+
+  .newsletter-wrap,
+  .about,
+  .form-wrap,
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 
   .promo-inner {
@@ -836,6 +937,10 @@ textarea:focus {
     flex-direction: column;
   }
 
+  .deal-actions .btn {
+    width: 100%;
+  }
+
   .hero-slide {
     min-height: 430px;
     padding: 1.3rem;
@@ -843,5 +948,99 @@ textarea:focus {
 
   .hero-carousel {
     min-height: 430px;
+  }
+
+  .deal-nav {
+    top: 58px;
+  }
+
+  .deal-nav-wrap {
+    position: relative;
+    gap: 0.9rem;
+    padding: 0.62rem 0;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .deal-nav-wrap::before,
+  .deal-nav-wrap::after {
+    content: "";
+    position: sticky;
+    top: 0;
+    width: 20px;
+    flex: 0 0 20px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .deal-nav-wrap::before {
+    left: 0;
+    margin-right: -20px;
+    background: linear-gradient(90deg, #ffffff 15%, rgba(255, 255, 255, 0));
+  }
+
+  .deal-nav-wrap::after {
+    right: 0;
+    margin-left: -20px;
+    background: linear-gradient(270deg, #ffffff 15%, rgba(255, 255, 255, 0));
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 2.4rem 0;
+  }
+
+  .hero {
+    padding: 1.4rem 0 1.6rem;
+  }
+
+  .hero-slide,
+  .hero-carousel {
+    min-height: 380px;
+  }
+
+  .hero-slide {
+    padding: 1rem;
+  }
+
+  .hero .btn {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-dots {
+    left: 1rem;
+    bottom: 0.7rem;
+  }
+
+  .section-head h2 {
+    margin-bottom: 0.4rem;
+  }
+
+  .deal-grid,
+  .cards,
+  .packages,
+  .recent-grid,
+  .testimonials,
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-inner {
+    font-size: 0.84rem;
+  }
+
+  .deal-nav {
+    top: 56px;
+  }
+
+  .deal-nav-item {
+    font-size: 0.93rem;
+    padding: 0.25rem 0.1rem 0.3rem;
   }
 }
