@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Your Trip | Chinatraveldeal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./book.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="./index.html">Chinatraveldeal</a>
+        <nav class="nav">
+          <a href="./index.html#deals">Deals</a>
+          <a href="./index.html#routes">Routes</a>
+          <a href="./index.html#culture">Culture</a>
+          <a href="./index.html#food">Food</a>
+        </nav>
+        <a class="btn btn-small" href="./index.html#booking">Need Help?</a>
+      </div>
+    </header>
+
+    <main class="book-page">
+      <section class="section">
+        <div class="container">
+          <div class="book-breadcrumb">
+            <a href="./index.html">Home</a>
+            <span>/</span>
+            <a id="bookDealBackLink" href="./deal.html">Deal details</a>
+            <span>/</span>
+            <strong>Book now</strong>
+          </div>
+
+          <div class="book-layout">
+            <aside class="book-summary">
+              <img id="bookDealImage" src="" alt="" />
+              <div class="book-summary-body">
+                <p class="book-topline" id="bookTopline">10 days</p>
+                <h1 id="bookTitle">China Discovery</h1>
+                <p class="book-meta" id="bookMeta"></p>
+                <p class="book-description" id="bookDescription"></p>
+
+                <div class="book-price-block">
+                  <p class="book-price-label">from (USD)</p>
+                  <p class="book-price-value" id="bookPrice">$1,899</p>
+                  <p class="book-price-subline">per person twin share</p>
+                </div>
+
+                <div class="book-payment-actions">
+                  <a id="bookDepositLink" class="btn btn-small" href="#bookForm">Pay Deposit</a>
+                  <a id="bookFullLink" class="btn btn-small btn-outline" href="#bookForm">Pay Full</a>
+                </div>
+              </div>
+            </aside>
+
+            <section class="book-form-panel">
+              <div class="section-head">
+                <h2>Traveler details</h2>
+              </div>
+
+              <form id="bookForm" class="book-form">
+                <input type="hidden" name="destination" id="bookDestinationInput" />
+                <input type="hidden" name="interest" value="Booking step page" />
+
+                <label>
+                  Lead traveler full name
+                  <input name="name" type="text" required />
+                </label>
+
+                <label>
+                  Email
+                  <input name="email" type="email" required />
+                </label>
+
+                <label>
+                  Mobile phone
+                  <input name="phone" type="tel" placeholder="+1 ..." required />
+                </label>
+
+                <div class="book-grid">
+                  <label>
+                    Departure date
+                    <input name="date" type="date" required />
+                  </label>
+                  <label>
+                    Travelers
+                    <input name="travelers" type="number" min="1" value="2" required />
+                  </label>
+                </div>
+
+                <div class="book-grid">
+                  <label>
+                    Room type
+                    <select name="roomType" required>
+                      <option value="">Select one</option>
+                      <option>Twin share</option>
+                      <option>Double</option>
+                      <option>Single supplement</option>
+                      <option>Family room</option>
+                    </select>
+                  </label>
+                  <label>
+                    Pace preference
+                    <select name="pace" required>
+                      <option value="">Select one</option>
+                      <option>Classic pace</option>
+                      <option>Relaxed pace</option>
+                      <option>Fast pace</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label>
+                  Special requests
+                  <textarea
+                    name="notes"
+                    rows="4"
+                    placeholder="Dietary needs, birthday celebration, city extension, etc."
+                  ></textarea>
+                </label>
+
+                <label class="book-consent">
+                  <input type="checkbox" name="consent" required />
+                  <span>I confirm traveler details are accurate and agree to be contacted by Chinatraveldeal.</span>
+                </label>
+
+                <button class="btn" type="submit">Submit booking request</button>
+                <p id="bookFormMessage" class="form-message" aria-live="polite"></p>
+              </form>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./book.js"></script>
+  </body>
+</html>

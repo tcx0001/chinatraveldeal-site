@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deal Details | Chinatraveldeal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./detail.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="./index.html">Chinatraveldeal</a>
+        <nav class="nav">
+          <a href="./index.html#deals">Deals</a>
+          <a href="./index.html#routes">Routes</a>
+          <a href="./index.html#culture">Culture</a>
+          <a href="./index.html#food">Food</a>
+          <a href="./index.html#booking">Booking</a>
+        </nav>
+        <a class="btn btn-small" href="./index.html#booking">Plan My China Trip</a>
+      </div>
+    </header>
+
+    <main class="detail-page">
+      <section class="section detail-media-section">
+        <div class="container">
+          <div class="detail-media-grid">
+            <div class="detail-main-media">
+              <img id="mainDealImage" src="" alt="" />
+            </div>
+            <div class="detail-thumb-grid" id="detailThumbGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section detail-summary-section">
+        <div class="container">
+          <div class="detail-breadcrumb">
+            <a href="./index.html">Home</a>
+            <span>/</span>
+            <a href="./index.html#deals">China Deals</a>
+            <span>/</span>
+            <strong id="crumbTitle">Deal</strong>
+          </div>
+
+          <div class="detail-layout">
+            <article class="detail-content">
+              <p class="detail-duration" id="detailTopline">10 days</p>
+              <h1 id="detailTitle">China Discovery</h1>
+              <p class="detail-destination" id="detailMeta"></p>
+              <p class="detail-description" id="detailDescription"></p>
+
+              <div class="detail-facts">
+                <p><strong>Dates:</strong> <span id="detailDateLine"></span></p>
+                <p><strong>Includes:</strong> <span id="detailIncludes"></span></p>
+              </div>
+            </article>
+
+            <aside class="detail-booking-card">
+              <div class="price-mode-tabs">
+                <button class="price-mode is-active" type="button">Use Cash</button>
+                <button class="price-mode" type="button">Use Points</button>
+                <button class="price-mode" type="button">Points + Pay</button>
+              </div>
+
+              <div class="detail-price-block">
+                <p class="price-label">from (USD)</p>
+                <p class="price-value" id="detailPrice">$1,899</p>
+                <p class="price-subline">per person twin share</p>
+                <p class="price-saving" id="detailSaving">Save $900</p>
+              </div>
+
+              <div class="detail-payment-actions">
+                <a id="detailDepositLink" class="btn btn-small" href="#booking">Pay Deposit</a>
+                <a id="detailFullLink" class="btn btn-small btn-outline" href="#booking">Pay Full</a>
+              </div>
+
+              <a id="continueBookingLink" class="btn detail-next-btn" href="./book.html">Continue booking</a>
+
+              <div class="detail-book-form-wrap">
+                <h3>Ready to book?</h3>
+                <p>Choose your dates and traveler details.</p>
+
+                <form id="detailBookingForm" class="detail-book-form">
+                  <input type="hidden" name="destination" id="detailDestinationInput" />
+                  <input type="hidden" name="interest" value="Detailed Deal Booking" />
+
+                  <label>
+                    Full Name
+                    <input name="name" type="text" required />
+                  </label>
+                  <label>
+                    Email
+                    <input name="email" type="email" required />
+                  </label>
+                  <label>
+                    Departure Date
+                    <input name="date" type="date" required />
+                  </label>
+                  <label>
+                    Travelers
+                    <input name="travelers" type="number" min="1" value="2" required />
+                  </label>
+                  <label>
+                    Notes
+                    <textarea
+                      name="notes"
+                      rows="3"
+                      placeholder="Any room type, food, or pace preference?"
+                    ></textarea>
+                  </label>
+
+                  <button class="btn" type="submit">Submit Booking Request</button>
+                  <p id="detailFormMessage" class="form-message" aria-live="polite"></p>
+                </form>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-anchor-nav-wrap">
+        <div class="container">
+          <nav class="detail-anchor-nav">
+            <a href="#highlights">Highlights</a>
+            <a href="#inclusions">Inclusions</a>
+            <a href="#itinerary">Itinerary</a>
+            <a href="#faq">FAQ</a>
+            <a href="#book-now">Book Now</a>
+          </nav>
+        </div>
+      </section>
+
+      <section id="highlights" class="section">
+        <div class="container detail-stack-card">
+          <h2>Trip highlights</h2>
+          <div class="highlight-grid" id="highlightGrid"></div>
+        </div>
+      </section>
+
+      <section id="inclusions" class="section">
+        <div class="container detail-stack-card">
+          <div class="section-head">
+            <h2>Tour Inclusions</h2>
+          </div>
+          <div id="inclusionsAccordion" class="accordion-list"></div>
+        </div>
+      </section>
+
+      <section id="itinerary" class="section section-alt detail-itinerary-section">
+        <div class="container detail-stack-card">
+          <div class="section-head">
+            <h2>Itinerary</h2>
+            <button id="itineraryExpandAll" class="link-more detail-expand-all" type="button">Expand all</button>
+          </div>
+          <div id="itineraryList" class="accordion-list itinerary-accordion"></div>
+        </div>
+      </section>
+
+      <section id="faq" class="section section-alt">
+        <div class="container detail-stack-card">
+          <h2>Frequently asked questions</h2>
+          <div id="faqList" class="faq-list"></div>
+        </div>
+      </section>
+
+      <section id="book-now" class="section">
+        <div class="container detail-stack-card detail-cta-card">
+          <h2>Ready to secure your seat?</h2>
+          <p>
+            Reserve with a deposit online, then complete your preferred date selection with our team.
+          </p>
+          <div class="detail-payment-actions">
+            <a id="bottomDepositLink" class="btn" href="#booking">Pay Deposit</a>
+            <a id="bottomFullLink" class="btn btn-outline" href="#booking">Pay Full Amount</a>
+            <a id="bottomContinueBookingLink" class="btn btn-ghost" href="./book.html">Continue booking</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./detail.js"></script>
+  </body>
+</html>

@@ -31,6 +31,10 @@ let paymentConfig = {
   manualEmail: "275364182@qq.com",
   manualPhone: "13980077660"
 };
+let backendConfig = {
+  bookingEndpoint: "",
+  newsletterEndpoint: ""
+};
 
 const loadDealsData = async () => {
   try {
@@ -71,6 +75,14 @@ const loadDealsData = async () => {
             manualPhone: json.payment.manualPhone || paymentConfig.manualPhone
           }
         : paymentConfig;
+    backendConfig =
+      json.backend && typeof json.backend === "object"
+        ? {
+            ...backendConfig,
+            bookingEndpoint: json.backend.bookingEndpoint || "",
+            newsletterEndpoint: json.backend.newsletterEndpoint || ""
+          }
+        : backendConfig;
     return true;
   } catch (error) {
     console.error("Unable to load deals data:", error);
@@ -107,8 +119,28 @@ const initializePaymentLinks = () => {
     "Payment gateway not connected yet. Click to request payment link.";
 };
 
+const postLeadData = async (endpoint, payload) => {
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(text || `Request failed: ${response.status}`);
+  }
+};
+
+const isConfiguredEndpoint = (value) =>
+  typeof value === "string" &&
+  value.startsWith("https://") &&
+  !value.includes("YOUR_PROJECT_REF");
+
 if (bookingForm && formMessage) {
-  bookingForm.addEventListener("submit", (event) => {
+  bookingForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const formData = new FormData(bookingForm);
@@ -122,15 +154,36 @@ if (bookingForm && formMessage) {
       return;
     }
 
-    formMessage.textContent =
-      "Thanks! Your U.S.-to-China request is received. We will email your custom itinerary within 24 hours.";
-    formMessage.style.color = "#166534";
-    bookingForm.reset();
+    if (!isConfiguredEndpoint(backendConfig.bookingEndpoint)) {
+      formMessage.textContent =
+        "Form backend is not connected yet. Set backend.bookingEndpoint in deals.json.";
+      formMessage.style.color = "#b45309";
+      return;
+    }
+
+    try {
+      formMessage.textContent = "Submitting your request...";
+      formMessage.style.color = "#1d4ed8";
+      await postLeadData(backendConfig.bookingEndpoint, {
+        type: "booking",
+        source: "website-booking-form",
+        payload
+      });
+      formMessage.textContent =
+        "Thanks! Your U.S.-to-China request is received. We will email your custom itinerary within 24 hours.";
+      formMessage.style.color = "#166534";
+      bookingForm.reset();
+    } catch (error) {
+      console.error("Booking request failed:", error);
+      formMessage.textContent =
+        "Could not submit right now. Please try again, or contact us at 275364182@qq.com.";
+      formMessage.style.color = "#b91c1c";
+    }
   });
 }
 
 if (newsletterForm && newsletterMessage) {
-  newsletterForm.addEventListener("submit", (event) => {
+  newsletterForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(newsletterForm);
     const payload = Object.fromEntries(formData.entries());
@@ -141,10 +194,31 @@ if (newsletterForm && newsletterMessage) {
       return;
     }
 
-    newsletterMessage.textContent =
-      "Thanks for subscribing. You will receive new China deal alerts soon.";
-    newsletterMessage.style.color = "#d8ffe7";
-    newsletterForm.reset();
+    if (!isConfiguredEndpoint(backendConfig.newsletterEndpoint)) {
+      newsletterMessage.textContent =
+        "Newsletter backend not connected yet.";
+      newsletterMessage.style.color = "#ffe08a";
+      return;
+    }
+
+    try {
+      newsletterMessage.textContent = "Submitting...";
+      newsletterMessage.style.color = "#bcd8ff";
+      await postLeadData(backendConfig.newsletterEndpoint, {
+        type: "newsletter",
+        source: "website-newsletter-form",
+        payload
+      });
+      newsletterMessage.textContent =
+        "Thanks for subscribing. You will receive new China deal alerts soon.";
+      newsletterMessage.style.color = "#d8ffe7";
+      newsletterForm.reset();
+    } catch (error) {
+      console.error("Newsletter signup failed:", error);
+      newsletterMessage.textContent =
+        "Could not subscribe right now. Please try again later.";
+      newsletterMessage.style.color = "#ffd2d2";
+    }
   });
 }
 
@@ -223,8 +297,8 @@ if (dealGrid && dealResultMeta && dealFiltersContainer) {
           <span>per person twin share</span>
         </div>
         <div class="deal-actions">
-          <a class="btn btn-small" href="#booking">View Deal</a>
-          <a class="btn btn-small btn-outline" href="#booking">Compare</a>
+          <a class="btn btn-small" href="./deal.html?deal=${encodeURIComponent(deal.title || "")}">View Deal</a>
+          <a class="btn btn-small btn-outline" href="./deal.html?deal=${encodeURIComponent(deal.title || "")}">Compare</a>
         </div>
       </div>
     </article>
@@ -319,7 +393,6 @@ if (dealGrid && dealResultMeta && dealFiltersContainer) {
         dealFilters.forEach((item) => item.classList.remove("active"));
         button.classList.add("active");
         activeFilter = button.dataset.filter || "all";
-        currentPage = 1;
         refreshDeals();
       });
     });

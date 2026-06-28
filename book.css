@@ -1,0 +1,149 @@
+.book-page {
+  background: #f4f7fc;
+}
+
+.book-breadcrumb {
+  margin-bottom: 1rem;
+  color: #5f7290;
+  font-size: 0.92rem;
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.book-summary,
+.book-form-panel {
+  background: #fff;
+  border: 1px solid #d8e2f0;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(8, 36, 84, 0.08);
+}
+
+.book-summary {
+  overflow: hidden;
+  position: sticky;
+  top: 82px;
+}
+
+.book-summary img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.book-summary-body {
+  padding: 1rem;
+}
+
+.book-topline {
+  margin: 0;
+  color: #3d5e86;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.book-summary h1 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  color: #112840;
+}
+
+.book-meta {
+  margin: 0.55rem 0 0;
+  font-weight: 700;
+  color: #244b77;
+}
+
+.book-description {
+  margin: 0.55rem 0 0;
+  color: #5d738f;
+}
+
+.book-price-block {
+  margin-top: 1rem;
+  border-top: 1px dashed #c9daef;
+  padding-top: 0.8rem;
+}
+
+.book-price-label {
+  margin: 0;
+  color: #5b6f88;
+  font-size: 0.8rem;
+}
+
+.book-price-value {
+  margin: 0.1rem 0 0;
+  font-size: 2rem;
+  color: #032c65;
+  font-weight: 800;
+}
+
+.book-price-subline {
+  margin: 0.1rem 0 0;
+  color: #5d728d;
+}
+
+.book-payment-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.book-form-panel {
+  padding: 1rem;
+}
+
+.book-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.book-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: #1f426c;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.book-consent {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.55rem !important;
+  color: #4a617e !important;
+  font-weight: 500 !important;
+}
+
+.book-consent input {
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 960px) {
+  .book-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .book-summary {
+    position: static;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}

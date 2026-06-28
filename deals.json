@@ -25,6 +25,10 @@
     "manualEmail": "275364182@qq.com",
     "manualPhone": "13980077660"
   },
+  "backend": {
+    "bookingEndpoint": "https://bbhokwqrtnovzgsjkgww.supabase.co/functions/v1/lead-intake",
+    "newsletterEndpoint": "https://bbhokwqrtnovzgsjkgww.supabase.co/functions/v1/lead-intake"
+  },
   "deals": [
     {
     "title": "10 Days China Discovery",

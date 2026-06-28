@@ -12,6 +12,8 @@ Chinese culture experiences and food journey programs.
 - `admin.html` / `admin.js` / `admin.css` - visual deal + payment config builder with add/edit/delete, validation, duplicate title check, title search, keyword/category suggestions, local draft autosave/restore, and one-click `deals.json` download
 - `robots.txt` / `sitemap.xml` - search engine crawling and indexing files for GitHub Pages
 - `vercel.json` - deployment defaults and security headers
+- `supabase/sql/001_create_lead_requests.sql` - booking/newsletter lead table
+- `supabase/functions/lead-intake/index.ts` - lead API (DB insert + Resend email)
 
 ## Online payment status
 
@@ -34,10 +36,47 @@ Chinese culture experiences and food journey programs.
 Because the page fetches `deals.json`, preview with a local web server instead of opening
 `index.html` directly from file explorer.
 
-## Next steps for production
+## Booking backend (Supabase + Resend)
 
-- Connect a real backend for quote requests (Supabase/Firebase or custom API).
-- Add email delivery (Resend or SendGrid) for form confirmations.
-- Add analytics (GA4 + Search Console + Microsoft Clarity).
-- Add legal pages: Privacy Policy, Terms, Cookie Notice.
-- Add multilingual support if your audience includes non-English visitors.
+The frontend form now supports a real backend. It posts to URLs in `deals.json`:
+
+```json
+"backend": {
+  "bookingEndpoint": "https://<project-ref>.supabase.co/functions/v1/lead-intake",
+  "newsletterEndpoint": "https://<project-ref>.supabase.co/functions/v1/lead-intake"
+}
+```
+
+### 1) Create DB table
+
+In Supabase SQL Editor, run:
+
+`supabase/sql/001_create_lead_requests.sql`
+
+### 2) Deploy the Edge Function
+
+From project root:
+
+```bash
+supabase login
+supabase link --project-ref <your-project-ref>
+supabase secrets set PROJECT_URL="https://<your-project-ref>.supabase.co" SERVICE_ROLE_KEY="<service-role-or-sb-secret-key>" RESEND_API_KEY="<re_xxx>" LEAD_NOTIFY_TO="275364182@qq.com" LEAD_FROM_EMAIL="Chinatraveldeal <onboarding@resend.dev>"
+supabase functions deploy lead-intake --no-verify-jwt
+```
+
+Use non-reserved secret names (`PROJECT_URL`, `SERVICE_ROLE_KEY`) because `SUPABASE_*` is reserved in the CLI.
+
+### 3) Fill endpoint in deals.json
+
+Set both endpoints to your deployed function URL:
+
+`https://<project-ref>.supabase.co/functions/v1/lead-intake`
+
+### 4) Redeploy static site
+
+Commit and push to GitHub Pages after updating `deals.json`.
+
+## Notes
+
+- `bookingForm` and `newsletterForm` now require backend endpoints to actually submit.
+- If endpoints are empty, the site will show "backend not connected yet."
